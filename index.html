@@ -1,0 +1,1098 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Amos Tochukwu Ezeh — Quantitative Risk Analyst</title>
+<meta name="description" content="Amos Tochukwu Ezeh — Quantitative Risk Analyst. MSc Mathematics (Probability & Finance), FRM Part I (GARP). Credit risk, fraud detection, volatility forecasting and machine-learning projects in Python.">
+<meta name="author" content="Amos Tochukwu Ezeh">
+<meta name="keywords" content="quantitative risk, credit risk, FRM, machine learning, Python, VaR, PD model, fraud detection, volatility forecasting, financial analytics, portfolio optimisation">
+<meta name="theme-color" content="#0F2044">
+<link rel="canonical" href="https://amoscotk0.github.io/">
+<!-- Open Graph (LinkedIn / Facebook) -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="Amos Tochukwu Ezeh — Quantitative Risk Analyst">
+<meta property="og:description" content="MSc Mathematics (Probability & Finance) · FRM Part I (GARP). Quantitative risk, ML, and financial analytics projects in Python.">
+<meta property="og:url" content="https://amoscotk0.github.io/">
+<meta property="og:image" content="https://amoscotk0.github.io/og-image.png">
+<meta property="og:locale" content="en_GB">
+<!-- Twitter -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Amos Tochukwu Ezeh — Quantitative Risk Analyst">
+<meta name="twitter:description" content="MSc Mathematics (Probability & Finance) · FRM Part I (GARP). Quant risk, ML, and financial analytics in Python.">
+<meta name="twitter:image" content="https://amoscotk0.github.io/og-image.png">
+<!-- Favicon: navy monogram -->
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><rect width='64' height='64' rx='12' fill='%230F2044'/><text x='32' y='45' font-family='Georgia,serif' font-size='38' fill='white' text-anchor='middle'>A</text></svg>">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --navy:   #0F2044;
+    --blue:   #2E6FDB;
+    --bg:     #F7F8FA;
+    --white:  #FFFFFF;
+    --text:   #1A1A2E;
+    --muted:  #6B7280;
+    --border: #E2E6ED;
+    --card:   #FFFFFF;
+    --tag-bg: #EEF3FB;
+    --tag-c:  #2E6FDB;
+    --font-head: Georgia, 'Times New Roman', serif;
+    --font-body: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: var(--font-body);
+    font-size: 16px;
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* ── NAV ── */
+  nav {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: var(--navy);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 5%;
+    height: 58px;
+    box-shadow: 0 1px 12px rgba(0,0,0,0.18);
+  }
+
+  .nav-brand {
+    font-family: var(--font-head);
+    font-size: 1rem;
+    font-weight: normal;
+    color: #fff;
+    letter-spacing: 0.01em;
+  }
+
+  .nav-links {
+    display: flex;
+    gap: 2rem;
+    list-style: none;
+  }
+
+  .nav-links a {
+    color: rgba(255,255,255,0.75);
+    text-decoration: none;
+    font-size: 0.85rem;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    transition: color 0.2s;
+  }
+
+  .nav-links a:hover { color: #fff; }
+
+  /* ── HERO ── */
+  .hero {
+    background: var(--navy);
+    color: #fff;
+    padding: 88px 5% 80px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    align-items: center;
+  }
+
+  .hero-label {
+    font-size: 0.75rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--blue);
+    margin-bottom: 1rem;
+    font-family: var(--font-body);
+  }
+
+  .hero h1 {
+    font-family: var(--font-head);
+    font-size: clamp(2rem, 4vw, 3rem);
+    font-weight: normal;
+    line-height: 1.18;
+    margin-bottom: 1.25rem;
+    color: #fff;
+  }
+
+  .hero p {
+    font-size: 1.05rem;
+    color: rgba(255,255,255,0.72);
+    max-width: 480px;
+    margin-bottom: 2rem;
+  }
+
+  .hero-cta {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+
+  .btn {
+    display: inline-block;
+    padding: 0.65rem 1.5rem;
+    border-radius: 4px;
+    font-size: 0.88rem;
+    font-weight: 600;
+    text-decoration: none;
+    letter-spacing: 0.02em;
+    transition: all 0.2s;
+    cursor: pointer;
+    border: none;
+  }
+
+  .btn-primary { background: var(--blue); color: #fff; }
+  .btn-primary:hover { background: #1f5abf; }
+  .btn-outline { background: transparent; color: #fff; border: 1.5px solid rgba(255,255,255,0.4); }
+  .btn-outline:hover { border-color: #fff; background: rgba(255,255,255,0.08); }
+
+  .hero-stats {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+  }
+
+  .stat-card {
+    background: rgba(255,255,255,0.07);
+    border: 1px solid rgba(255,255,255,0.12);
+    border-radius: 8px;
+    padding: 1.4rem 1.5rem;
+  }
+
+  .stat-number {
+    font-family: var(--font-head);
+    font-size: 2rem;
+    color: #fff;
+    line-height: 1;
+    margin-bottom: 0.3rem;
+  }
+
+  .stat-label {
+    font-size: 0.8rem;
+    color: rgba(255,255,255,0.55);
+    letter-spacing: 0.04em;
+  }
+
+  /* ── SECTIONS ── */
+  section { padding: 80px 5%; }
+
+  .section-label {
+    font-size: 0.72rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--blue);
+    margin-bottom: 0.5rem;
+    font-family: var(--font-body);
+  }
+
+  .section-title {
+    font-family: var(--font-head);
+    font-size: clamp(1.5rem, 3vw, 2rem);
+    font-weight: normal;
+    color: var(--navy);
+    margin-bottom: 0.75rem;
+  }
+
+  .section-sub {
+    color: var(--muted);
+    font-size: 1rem;
+    max-width: 580px;
+    margin-bottom: 3rem;
+  }
+
+  /* ── ABOUT ── */
+  #about { background: var(--white); border-bottom: 1px solid var(--border); }
+
+  .about-grid {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 5rem;
+    align-items: start;
+  }
+
+  .about-text p {
+    color: #374151;
+    margin-bottom: 1.1rem;
+    font-size: 1.02rem;
+  }
+
+  .credential-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .credential-list li {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.75rem;
+    font-size: 0.95rem;
+    color: #374151;
+    padding: 0.75rem 1rem;
+    background: var(--bg);
+    border-radius: 6px;
+    border-left: 3px solid var(--blue);
+  }
+
+  .cred-icon { font-size: 1rem; flex-shrink: 0; margin-top: 0.1rem; }
+
+  .cred-detail { font-size: 0.8rem; color: var(--muted); display: block; margin-top: 0.1rem; }
+
+  /* ── SKILLS STRIP ── */
+  .skills-strip {
+    background: var(--navy);
+    padding: 48px 5%;
+  }
+
+  .skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+  }
+
+  .skill-group h4 {
+    color: rgba(255,255,255,0.5);
+    font-size: 0.7rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    margin-bottom: 0.6rem;
+    font-family: var(--font-body);
+    font-weight: 600;
+  }
+
+  .skill-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+  }
+
+  .skill-tag {
+    background: rgba(46,111,219,0.18);
+    color: #93b8f5;
+    font-size: 0.78rem;
+    padding: 0.25rem 0.65rem;
+    border-radius: 3px;
+    border: 1px solid rgba(46,111,219,0.3);
+    font-family: var(--font-body);
+  }
+
+  /* ── PROJECTS ── */
+  #projects { background: var(--bg); }
+
+  .projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+    gap: 1.75rem;
+  }
+
+  .project-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 1.75rem;
+    transition: box-shadow 0.25s, transform 0.25s;
+    opacity: 0;
+    transform: translateY(16px);
+    transition: opacity 0.4s ease, transform 0.4s ease, box-shadow 0.25s;
+  }
+
+  .project-card.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .project-card:hover {
+    box-shadow: 0 6px 28px rgba(15,32,68,0.1);
+    transform: translateY(-2px);
+  }
+
+  .project-tag {
+    display: inline-block;
+    font-size: 0.68rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--tag-c);
+    background: var(--tag-bg);
+    padding: 0.2rem 0.6rem;
+    border-radius: 3px;
+    margin-bottom: 0.75rem;
+    font-family: var(--font-body);
+  }
+
+  .project-card h3 {
+    font-family: var(--font-head);
+    font-size: 1.1rem;
+    font-weight: normal;
+    color: var(--navy);
+    margin-bottom: 0.6rem;
+    line-height: 1.3;
+  }
+
+  .project-card p {
+    font-size: 0.9rem;
+    color: var(--muted);
+    margin-bottom: 1rem;
+    line-height: 1.6;
+  }
+
+  .project-highlights {
+    list-style: none;
+    margin-bottom: 1.25rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+  }
+
+  .project-highlights li {
+    font-size: 0.82rem;
+    color: #374151;
+    padding-left: 1rem;
+    position: relative;
+  }
+
+  .project-highlights li::before {
+    content: '—';
+    position: absolute;
+    left: 0;
+    color: var(--blue);
+    font-size: 0.75rem;
+  }
+
+  .project-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 1rem;
+    border-top: 1px solid var(--border);
+  }
+
+  .project-year {
+    font-size: 0.78rem;
+    color: var(--muted);
+  }
+
+  .project-link {
+    font-size: 0.82rem;
+    font-weight: 600;
+    color: var(--blue);
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+    transition: gap 0.2s;
+  }
+
+  .project-link:hover { gap: 0.5rem; }
+
+  /* ── CV SECTION ── */
+  #cv { background: var(--white); border-top: 1px solid var(--border); }
+
+  .cv-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+  }
+
+  .cv-block h4 {
+    font-family: var(--font-head);
+    font-size: 1rem;
+    font-weight: normal;
+    color: var(--navy);
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .cv-entry {
+    display: flex;
+    flex-direction: column;
+    gap: 0.15rem;
+    margin-bottom: 1.25rem;
+  }
+
+  .cv-entry-title {
+    font-weight: 600;
+    font-size: 0.92rem;
+    color: var(--text);
+  }
+
+  .cv-entry-org {
+    font-size: 0.85rem;
+    color: var(--blue);
+    font-style: italic;
+  }
+
+  .cv-entry-date {
+    font-size: 0.78rem;
+    color: var(--muted);
+  }
+
+  .cv-entry-detail {
+    font-size: 0.82rem;
+    color: #4B5563;
+    margin-top: 0.2rem;
+  }
+
+  .cert-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 0.65rem 0;
+    border-bottom: 1px solid var(--border);
+    gap: 1rem;
+  }
+
+  .cert-name {
+    font-size: 0.88rem;
+    font-weight: 600;
+    color: var(--text);
+  }
+
+  .cert-status {
+    font-size: 0.75rem;
+    font-weight: 700;
+    padding: 0.2rem 0.6rem;
+    border-radius: 3px;
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+
+  .cert-passed { background: #D1FAE5; color: #065F46; }
+  .cert-done   { background: #EEF3FB; color: #1E40AF; }
+
+  .cv-download-block {
+    margin-top: 2.5rem;
+    padding: 1.5rem;
+    background: var(--bg);
+    border-radius: 8px;
+    border: 1px solid var(--border);
+    text-align: center;
+  }
+
+  .cv-download-block p {
+    font-size: 0.9rem;
+    color: var(--muted);
+    margin-bottom: 1rem;
+  }
+
+  /* ── CONTACT ── */
+  #contact {
+    background: var(--navy);
+    color: #fff;
+    text-align: center;
+    padding: 80px 5%;
+  }
+
+  #contact .section-title { color: #fff; }
+  #contact .section-sub   { color: rgba(255,255,255,0.6); margin: 0 auto 2.5rem; }
+
+  .contact-links {
+    display: flex;
+    justify-content: center;
+    gap: 1.25rem;
+    flex-wrap: wrap;
+    margin-bottom: 3rem;
+  }
+
+  .contact-link {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.7rem 1.5rem;
+    border: 1.5px solid rgba(255,255,255,0.25);
+    border-radius: 4px;
+    color: rgba(255,255,255,0.85);
+    text-decoration: none;
+    font-size: 0.88rem;
+    font-weight: 500;
+    transition: all 0.2s;
+  }
+
+  .contact-link:hover {
+    border-color: #fff;
+    color: #fff;
+    background: rgba(255,255,255,0.08);
+  }
+
+  .contact-note {
+    font-size: 0.82rem;
+    color: rgba(255,255,255,0.35);
+  }
+
+  /* ── FOOTER ── */
+  footer {
+    background: #080F1E;
+    color: rgba(255,255,255,0.3);
+    text-align: center;
+    padding: 1.25rem 5%;
+    font-size: 0.78rem;
+  }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 768px) {
+    .hero { grid-template-columns: 1fr; padding: 56px 5% 56px; }
+    .hero-stats { display: none; }
+    .about-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+    .cv-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+    .nav-links { display: none; }
+    .projects-grid { grid-template-columns: 1fr; }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .project-card { opacity: 1; transform: none; transition: none; }
+  }
+</style>
+<noscript><style>.project-card{opacity:1!important;transform:none!important;}</style></noscript>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <span class="nav-brand">Amos Tochukwu Ezeh</span>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#cv">CV</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<header class="hero">
+  <div class="hero-left">
+    <p class="hero-label">Quantitative &amp; Financial Analytics</p>
+    <h1>Amos Tochukwu Ezeh</h1>
+    <p>MSc Mathematics (Probability &amp; Finance) · FRM Part I (GARP, May 2026) · Building quantitative risk models, machine learning pipelines, and financial analytics tools in Python. Based in L'Aquila, Italy. Open to roles across Europe.</p>
+    <div class="hero-cta">
+      <a href="#projects" class="btn btn-primary">View Projects</a>
+      <a href="#contact" class="btn btn-outline">Get in Touch</a>
+    </div>
+  </div>
+  <div class="hero-stats">
+    <div class="stat-card">
+      <div class="stat-number">Interests</div>
+      <div class="stat-label">Financial Risk Management</div>
+      <div class="stat-label">Quantitative Analysis</div>
+      <div class="stat-label">Portfolio &amp; Asset Management &amp; Evaluation</div>
+      <div class="stat-label">Market &amp; Credit Analysis</div>
+    </div>
+    <!-- <div class="stat-card">
+      <div class="stat-number">FRM</div>
+      <div class="stat-label">Part I Passed · GARP 2026</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-number">MSc</div>
+      <div class="stat-label">Mathematics · 102/110</div> -->
+    <!-- </div>
+    <div class="stat-card">
+      <div class="stat-number">5+</div>
+      <div class="stat-label">ML Frameworks Used</div>
+    </div> -->
+  </div>
+</header>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="section-label">Background</div>
+  <div class="about-grid">
+    <div class="about-text">
+      <div class="section-title">About</div>
+      <p>I am a quantitative analyst with an MSc in Mathematics (Probability and Finance) from the University of L'Aquila, Italy, and a passed FRM Part I from GARP (May 2026). My work sits at the intersection of financial risk management, applied machine learning, and data analytics.</p>
+      <p>My project portfolio covers the full spectrum of quantitative finance: deployment-grade credit risk PD modelling with regulatory governance modules, industrial-standard fraud detection pipelines, multi-model trading strategies with SHAP explainability, volatility forecasting with HAR models and VaR backtesting, and portfolio optimisation with robust covariance estimation.</p>
+      <p>I have professional experience in financial analysis, KPI reporting, portfolio risk monitoring, and Python data pipeline development. I am a certified Financial Modeling &amp; Valuation Analyst (FMVA®), Business Intelligence &amp; Data Analytics (BIDA®), and Market Risk Expert, with certifications from the Corporate Finance Institute (CFI). Also, and am an affiliate member of both the Global Association of Risk Professionals (GARP) and CFI.</p>
+      <p>I am based in L'Aquila, Italy, and I am open to relocating for in quantitative risk, credit risk, financial data analytics, and asset management.</p>
+    </div>
+    <div class="about-credentials">
+      <ul class="credential-list">
+        <li>
+          <span class="cred-icon">🎓</span>
+          <div>
+            <strong>MSc Mathematics (Probability &amp; Finance)</strong>
+            <span class="cred-detail">Università dell'Aquila, Italy · Grade 102/110 · 2022–2025</span>
+          </div>
+        </li>
+        <li>
+          <span class="cred-icon">📋</span>
+          <div>
+            <strong>FRM Part I — GARP</strong>
+            <span class="cred-detail">PASSED May 2026 · Quant Analysis, Financial Markets &amp; Products, Valuation &amp; Risk Models</span>
+          </div>
+        </li>
+        <li>
+          <span class="cred-icon">📈</span>
+          <div>
+            <strong>Market Risk Analysis — Corporate Finance Institute</strong>
+            <span class="cred-detail">Completed Aug 2025 · Basel III &amp; Risk Management, Equity Market, Fixed Income, Derivative Market, Modelling Risk with Monte Carlo Simulation
+            </span>
+            <!-- Certificate link added here -->
+            <a href="http://credentials.corporatefinanceinstitute.com/bf0991cc-130f-4bd0-a93c-ccf2e6c87ce4#acc.MEXC2Jdk" 
+            target="_blank" 
+            class="certificate-link">
+            📄 View Certificate
+            </a>
+          </div>
+        </li>
+        <li>
+          <span class="cred-icon">📊</span>
+          <div>
+            <strong>FMVA — Corporate Finance Institute</strong>
+            <span class="cred-detail">Completed June 2026 · DCF, 3-Statement Modelling, Business Valuation</span>
+        
+            <!-- Certificate link added here -->
+            <a href="http://credentials.corporatefinanceinstitute.com/51bd46b2-12eb-4430-a157-07b0895849e7#acc.4VpzdtZu" 
+            target="_blank" 
+            class="certificate-link">
+            📄 View Certificate
+            </a>
+          </div>
+        </li>
+        <li>
+          <span class="cred-icon">📈</span>
+          <div>
+            <strong>BIDA — Corporate Finance Institute</strong>
+            <span class="cred-detail">Completed Sep 2025 · Power BI, SQL, Python, Tableau</span>
+             <!-- Certificate link added here -->
+             <a href="http://credentials.corporatefinanceinstitute.com/bf0991cc-130f-4bd0-a93c-ccf2e6c87ce4#acc.MEXC2Jdk" 
+             target="_blank" 
+             class="certificate-link">
+             📄 View Certificate
+             </a>
+          </div>
+        </li>
+        <li>
+          <span class="cred-icon">🌍</span>
+          <div>
+            <strong>Languages</strong>
+            <span class="cred-detail">English C2 (fluent) · Italian B1/B2 (professional)</span>
+          </div>
+        </li>
+      </ul>
+    </div><section id="about">
+      <div class="section-label">Background</div>
+      <div class="about-grid">
+        <div class="about-text">
+          <div class="section-title">About</div>
+          <p>I am a quantitative analyst with an MSc in Mathematics (Probability and Finance) from the University of L'Aquila, Italy, and a passed FRM Part I from GARP (May 2026). My work sits at the intersection of financial risk management, applied machine learning, and data analytics.</p>
+          
+          <p>My project portfolio covers the full spectrum of quantitative finance: deployment-grade credit risk PD modelling with regulatory governance modules, industrial-standard fraud detection pipelines, multi-model trading strategies with SHAP explainability, volatility forecasting with HAR models and VaR backtesting, and portfolio optimisation with robust covariance estimation.</p>
+          
+          <p>I have professional experience in financial analysis, KPI reporting, portfolio risk monitoring, and Python data pipeline development. I am a certified Financial Modeling &amp; Valuation Analyst (FMVA®), Business Intelligence &amp; Data Analytics (BIDA®), and Market Risk Expert, with certifications from the Corporate Finance Institute (CFI). I am also an affiliate member of both the Global Association of Risk Professionals (GARP) and CFI.</p>
+          
+          <p>I am based in L'Aquila, Italy, and I am open to relocating for roles in quantitative risk, credit risk, financial data analytics, and asset management.</p>
+        </div>
+    
+        <div class="about-credentials">
+          <ul class="credential-list">
+            <!-- MSc -->
+            <li>
+              <span class="cred-icon">🎓</span>
+              <div>
+                <strong>MSc Mathematics (Probability &amp; Finance)</strong>
+                <span class="cred-detail">Università dell'Aquila, Italy · Grade 102/110 · 2022–2025</span>
+              </div>
+            </li>
+    
+            <!-- FRM -->
+            <li>
+              <span class="cred-icon">📋</span>
+              <div>
+                <strong>FRM Part I — GARP</strong>
+                <span class="cred-detail">PASSED May 2026 · Quant Analysis, Financial Markets &amp; Products, Valuation &amp; Risk Models</span>
+
+                <a href="https://my.garp.org/DigitalBadgeFRMI?id=003Po00001Q9sg9IAB" 
+                   target="_blank" 
+                   class="certificate-link">
+                  📄 View Certificate
+                </a>
+              </div>
+            </li>
+    
+            <!-- Market Risk -->
+            <li>
+              <span class="cred-icon">📈</span>
+              <div>
+                <strong>Market Risk Analysis — Corporate Finance Institute</strong>
+                <span class="cred-detail">Completed Aug 2025 · Basel III &amp; Risk Management, Equity Market, Fixed Income, Derivative Market, Modelling Risk with Monte Carlo Simulation</span>
+                
+                <a href="http://credentials.corporatefinanceinstitute.com/d2a854d2-0072-4175-b7a7-b7c14bfec26d#acc.gfxqtVwo" 
+                   target="_blank" 
+                   class="certificate-link">
+                  📄 View Certificate
+                </a>
+              </div>
+            </li>
+    
+            <!-- FMVA -->
+            <li>
+              <span class="cred-icon">📊</span>
+              <div>
+                <strong>FMVA — Corporate Finance Institute</strong>
+                <span class="cred-detail">Completed June 2026 · DCF, 3-Statement Modelling, Business Valuation</span>
+                
+                <a href="http://credentials.corporatefinanceinstitute.com/51bd46b2-12eb-4430-a157-07b0895849e7#acc.4VpzdtZu" 
+                   target="_blank" 
+                   class="certificate-link">
+                  📄 View Certificate
+                </a>
+              </div>
+            </li>
+    
+            <!-- BIDA -->
+            <li>
+              <span class="cred-icon">📈</span>
+              <div>
+                <strong>BIDA — Corporate Finance Institute</strong>
+                <span class="cred-detail">Completed Sep 2025 · Power BI, SQL, Python, Tableau</span>
+                
+                <a href="http://credentials.corporatefinanceinstitute.com/bf0991cc-130f-4bd0-a93c-ccf2e6c87ce4#acc.MEXC2Jdk" 
+                   target="_blank" 
+                   class="certificate-link">
+                  📄 View Certificate
+                </a>
+              </div>
+            </li>
+    
+            <!-- Languages -->
+            <li>
+              <span class="cred-icon">🌍</span>
+              <div>
+                <strong>Languages</strong>
+                <span class="cred-detail">English C2 (fluent) · Italian B1/B2 (professional)</span>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+  </div>
+</section>
+
+<!-- SKILLS STRIP -->
+<div class="skills-strip">
+  <div class="skills-grid">
+    <div class="skill-group">
+      <h4>Programming</h4>
+      <div class="skill-tags">
+        <span class="skill-tag">Python</span>
+        <span class="skill-tag">SQL</span>
+        <span class="skill-tag">MATLAB</span>
+        <span class="skill-tag">R</span>
+        <span class="skill-tag">VBA</span>
+        <span class="skill-tag">Git</span>
+      </div>
+    </div>
+    <div class="skill-group">
+      <h4>Machine Learning</h4>
+      <div class="skill-tags">
+        <span class="skill-tag">XGBoost</span>
+        <span class="skill-tag">LightGBM</span>
+        <span class="skill-tag">CatBoost</span>
+        <span class="skill-tag">LSTM</span>
+        <span class="skill-tag">SHAP</span>
+        <span class="skill-tag">FinBERT</span>
+        <span class="skill-tag">PPO/SAC/TD3</span>
+      </div>
+    </div>
+    <div class="skill-group">
+      <h4>Risk &amp; Quant Finance</h4>
+      <div class="skill-tags">
+        <span class="skill-tag">VaR / ES</span>
+        <span class="skill-tag">PD/LGD/EAD</span>
+        <span class="skill-tag">WoE Scorecard</span>
+        <span class="skill-tag">Monte Carlo</span>
+        <span class="skill-tag">GARCH</span>
+        <span class="skill-tag">ARIMA</span>
+        <span class="skill-tag">HAR Model</span>
+        <span class="skill-tag">Basel</span>
+      </div>
+    </div>
+    <div class="skill-group">
+      <h4>Tools &amp; BI</h4>
+      <div class="skill-tags">
+        <span class="skill-tag">Power BI</span>
+        <span class="skill-tag">Advanced Excel</span>
+        <span class="skill-tag">Tableau</span>
+        <span class="skill-tag">SAP S/4HANA</span>
+        <span class="skill-tag">Black-Scholes</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- PROJECTS -->
+<section id="projects">
+  <div class="section-label">Work</div>
+  <div class="section-title">Projects</div>
+  <p class="section-sub">Quantitative finance and machine learning projects built in Python. All source code available on GitHub.</p>
+
+  <div class="projects-grid">
+
+    <div class="project-card">
+      <span class="project-tag">Credit Risk</span>
+      <h3>Credit Risk PD Model — Deployment-Grade</h3>
+      <p>A dual-track PD modelling pipeline combining a regulatory-standard WoE scorecard and a calibrated XGBoost challenger, with full governance infrastructure.</p>
+      <ul class="project-highlights">
+        <li>Monotonic WoE scorecard with IV-based feature selection and VIF collinearity pruning</li>
+        <li>Governance modules: fair-lending audit, adverse-action reason codes, PSI drift monitoring</li>
+        <li>EL = PD × LGD × EAD cutoff strategy table with credit-conversion factor (CCF)</li>
+        <li>Validated on AUC, Gini, KS, Brier score, and calibration reliability diagram</li>
+      </ul>
+      <div class="project-footer">
+        <span class="project-year">2026</span>
+        <a href="https://github.com/amoscotk0" target="_blank" class="project-link">GitHub ↗</a>
+      </div>
+    </div>
+
+    <div class="project-card">
+      <span class="project-tag">Fraud Detection</span>
+      <h3>Transactional Fraud Detection — Industrial Pipeline</h3>
+      <p>A 10-tier production-adjacent fraud detection system covering the full lifecycle from data ingestion to model retraining.</p>
+      <ul class="project-highlights">
+        <li>Graph-based fraud ring detection using NetworkX (shared-device account linkage)</li>
+        <li>Out-of-time validation, PR-AUC evaluation, dollar cost curve threshold optimisation</li>
+        <li>SHAP reason codes per flagged alert for adverse-action explainability</li>
+        <li>PSI drift monitoring and analyst-confirmed feedback loop retraining</li>
+      </ul>
+      <div class="project-footer">
+        <span class="project-year">2026</span>
+        <a href="https://github.com/amoscotk0" target="_blank" class="project-link">GitHub ↗</a>
+      </div>
+    </div>
+
+    <div class="project-card">
+      <span class="project-tag">Trading Strategy</span>
+      <h3>Multi-Model Trading Strategy with SHAP Explainability</h3>
+      <p>Systematic comparison of five classification models for next-day equity direction prediction, with a full SHAP explainability layer.</p>
+      <ul class="project-highlights">
+        <li>Logistic Regression, Random Forest, XGBoost, LightGBM, CatBoost compared on matched data</li>
+        <li>Eleven hand-engineered technical indicators (RSI, MACD, Bollinger Bands, ATR)</li>
+        <li>Global SHAP importance, beeswarm, dependence plots, and local waterfall explanations</li>
+        <li>Spearman rank correlation across models as feature stability diagnostic</li>
+      </ul>
+      <div class="project-footer">
+        <span class="project-year">2026</span>
+        <a href="https://github.com/amoscotk0" target="_blank" class="project-link">GitHub ↗</a>
+      </div>
+    </div>
+
+    <div class="project-card">
+      <span class="project-tag">Portfolio</span>
+      <h3>Hybrid Portfolio &amp; Risk Engine</h3>
+      <p>A production-quality portfolio allocation system combining robust mean-variance optimisation with a regime-switching ML overlay and tail risk modelling.</p>
+      <ul class="project-highlights">
+        <li>Ledoit-Wolf shrinkage covariance and mean-shrinkage estimators</li>
+        <li>Walk-forward backtest with monthly rebalancing, per-asset weight caps, and transaction costs</li>
+        <li>RF regime classifier scored against persistence baseline (correct bar for autocorrelated vol)</li>
+        <li>Filtered Historical Simulation vs Gaussian Monte Carlo CVaR comparison</li>
+      </ul>
+      <div class="project-footer">
+        <span class="project-year">2026</span>
+        <a href="https://github.com/amoscotk0" target="_blank" class="project-link">GitHub ↗</a>
+      </div>
+    </div>
+
+    <div class="project-card">
+      <span class="project-tag">Volatility</span>
+      <h3>Crypto Volatility &amp; Risk Forecaster</h3>
+      <p>Next-day BTC realised volatility forecasting using HAR, LightGBM, and EWMA, with rigorous VaR backtesting.</p>
+      <ul class="project-highlights">
+        <li>Garman-Klass and Parkinson range-based variance estimators</li>
+        <li>Models scored with R², RMSE, and QLIKE loss (the robust vol-model metric)</li>
+        <li>Kupiec coverage test and Christoffersen clustering test for VaR breach evaluation</li>
+        <li>Volatility targeting overlay: exposure scaled inversely to forecast vol</li>
+      </ul>
+      <div class="project-footer">
+        <span class="project-year">2026</span>
+        <a href="https://github.com/amoscotk0" target="_blank" class="project-link">GitHub ↗</a>
+      </div>
+    </div>
+
+    <div class="project-card">
+      <span class="project-tag">NLP / Sentiment</span>
+      <h3>Financial News Sentiment Dashboard</h3>
+      <p>A two-part NLP pipeline for financial news monitoring and signal validation, using FinBERT with a finance-lexicon fallback.</p>
+      <ul class="project-highlights">
+        <li>Point-in-time news alignment: post-16:00 ET headlines map to next business day</li>
+        <li>Topic classification with deduplication of syndicated headlines</li>
+        <li>Information coefficient (IC) decomposition by topic</li>
+        <li>Costed dollar-neutral long-short strategy for returns validation</li>
+      </ul>
+      <div class="project-footer">
+        <span class="project-year">2026</span>
+        <a href="https://github.com/amoscotk0" target="_blank" class="project-link">GitHub ↗</a>
+      </div>
+    </div>
+
+    <div class="project-card">
+      <span class="project-tag">Reinforcement Learning</span>
+      <h3>RL Trading — Multi-Asset Continuous</h3>
+      <p>PPO, SAC, and TD3 agents trained on a custom multi-asset Gymnasium environment with continuous target-weight actions and turnover costs in the reward.</p>
+      <ul class="project-highlights">
+        <li>Causal timing: weights at t earn t to t+1 returns; no look-ahead</li>
+        <li>Seed-averaged evaluation across four PPO runs to report Sharpe distribution</li>
+        <li>Benchmarked against buy-and-hold, equal-weight, and momentum baseline</li>
+        <li>Honest conclusion: RL value comes from risk-aware sizing, not directional alpha</li>
+      </ul>
+      <div class="project-footer">
+        <span class="project-year">2026</span>
+        <a href="https://github.com/amoscotk0" target="_blank" class="project-link">GitHub ↗</a>
+      </div>
+    </div>
+
+    <div class="project-card">
+      <span class="project-tag">FRM Research</span>
+      <h3>Monte Carlo Loss Distribution — FRM Project</h3>
+      <p>Stochastic simulation framework for operational risk modelling under Basel III capital requirements.</p>
+      <ul class="project-highlights">
+        <li>Compound Poisson-lognormal process for frequency and severity modelling</li>
+        <li>100,000+ Monte Carlo trials for stable tail estimation</li>
+        <li>VaR and Expected Shortfall calculated at 95% and 99.9% confidence levels</li>
+      </ul>
+      <div class="project-footer">
+        <span class="project-year">2026</span>
+        <a href="https://github.com/amoscotk0" target="_blank" class="project-link">GitHub ↗</a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- CV -->
+<section id="cv">
+  <div class="section-label">Background</div>
+  <div class="section-title">CV Snapshot</div>
+  <p class="section-sub">Key experience and qualifications. Full CV available to download below.</p>
+
+  <div class="cv-grid">
+    <div>
+      <div class="cv-block">
+        <h4>Experience</h4>
+        <div class="cv-entry">
+          <span class="cv-entry-title">Financial Analyst</span>
+          <span class="cv-entry-org">Upwork (Freelance), Remote</span>
+          <span class="cv-entry-date">Aug 2025 – Feb 2026</span>
+          <span class="cv-entry-detail">Excel/Power BI reporting automation, DCF modelling, KPI dashboards, stakeholder reporting.</span>
+        </div>
+        <div class="cv-entry">
+          <span class="cv-entry-title">Quantitative Research Analyst</span>
+          <span class="cv-entry-org">Nigeria Jubilee Fellowship Programme, Remote</span>
+          <span class="cv-entry-date">Oct 2023 – Nov 2024</span>
+          <span class="cv-entry-detail">Portfolio VaR analysis, Python data pipelines, equity volatility monitoring, risk reporting.</span>
+        </div>
+        <div class="cv-entry">
+          <span class="cv-entry-title">Inventory Controller</span>
+          <span class="cv-entry-org">L'Ape Cooperativa Sociale, L'Aquila</span>
+          <span class="cv-entry-date">Oct 2023 – Sep 2024</span>
+          <span class="cv-entry-detail">ERP data management, root cause analysis, cross-department coordination.</span>
+        </div>
+        <div class="cv-entry">
+          <span class="cv-entry-title">Graduate Assistant</span>
+          <span class="cv-entry-org">University of Ilorin, Nigeria</span>
+          <span class="cv-entry-date">Nov 2018 – Jan 2022</span>
+          <span class="cv-entry-detail">Financial reporting, MATLAB research (Gauss-Seidel convergence), departmental operations.</span>
+        </div>
+      </div>
+
+      <div class="cv-block" style="margin-top:2.5rem">
+        <h4>Education</h4>
+        <div class="cv-entry">
+          <span class="cv-entry-title">MSc Mathematics (Probability &amp; Finance)</span>
+          <span class="cv-entry-org">Università degli Studi dell'Aquila, Italy</span>
+          <span class="cv-entry-date">Oct 2022 – Jul 2025 · Grade: 102/110 (3.7/4.0)</span>
+          <span class="cv-entry-detail">International Masters Scholarship. Thesis: Change of Measure Theorems for Semimartingales and Stochastic Processes with Jumps.</span>
+        </div>
+        <div class="cv-entry">
+          <span class="cv-entry-title">BSc Mathematics (Pure and Applied)</span>
+          <span class="cv-entry-org">Federal University Wukari, Nigeria</span>
+          <span class="cv-entry-date">Sep 2014 – Sep 2018 · Grade: 4.85/5.00 (First Class)</span>
+          <span class="cv-entry-detail">MTN Foundation Science &amp; Technology Scholarship. Award of Excellence.</span>
+        </div>
+      </div>
+    </div>
+
+    <div>
+      <div class="cv-block">
+        <h4>Certifications</h4>
+        <div class="cert-item">
+          <span class="cert-name">FRM Part I — GARP</span>
+          <span class="cert-status cert-passed">PASSED 2026</span>
+        </div>
+        <div class="cert-item">
+          <span class="cert-name">Market Risk Analyst — CFI</span>
+          <span class="cert-status cert-done">Jun 2026</span>
+        </div>
+        <div class="cert-item">
+          <span class="cert-name">FMVA — Corporate Finance Institute</span>
+          <span class="cert-status cert-done">Aug 2025</span>
+        </div>
+        <div class="cert-item">
+          <span class="cert-name">BIDA — Corporate Finance Institute</span>
+          <span class="cert-status cert-done">Sep 2025</span>
+        </div>
+        <div class="cert-item">
+          <span class="cert-name">SAP FICO — Mayowa Consult</span>
+          <span class="cert-status cert-done">Oct 2024</span>
+        </div>
+      </div>
+
+      <div class="cv-block" style="margin-top:2.5rem">
+        <h4>Memberships</h4>
+        <div class="cert-item">
+          <span class="cert-name">Global Association of Risk Professionals (GARP)</span>
+          <span class="cert-status cert-done">Since 2025</span>
+        </div>
+        <div class="cert-item">
+          <span class="cert-name">Corporate Finance Institute (CFI)</span>
+          <span class="cert-status cert-done">Since 2025</span>
+        </div>
+      </div>
+
+      <div class="cv-download-block">
+        <p>Download CV/Profile.</p>
+        <a href="https://www.linkedin.com/in/amos-ezeh" target="_blank" class="btn btn-primary">Download CV (PDF)</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="section-label">Get in Touch</div>
+  <div class="section-title">Contact</div>
+  <p class="section-sub">Open to quantitative risk, credit risk, financial analytics, and data science roles. Happy to discuss projects, collaborations, or opportunities.</p>
+  <div class="contact-links">
+    <a href="mailto:amosezeh@outlook.com" class="contact-link">✉ amosezeh@outlook.com</a>
+    <a href="https://www.linkedin.com/in/amos-ezeh" target="_blank" class="contact-link">LinkedIn ↗</a>
+    <a href="https://github.com/amoscotk0" target="_blank" class="contact-link">GitHub ↗</a>
+  </div>
+  <p class="contact-note">Based in L'Aquila, Italy · Open to relocating</p>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <p>© 2026 Amos Tochukwu Ezeh · Built with purpose</p>
+</footer>
+
+<script>
+  // Scroll-triggered fade-in for project cards
+  const cards = document.querySelectorAll('.project-card');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry, i) => {
+      if (entry.isIntersecting) {
+        setTimeout(() => entry.target.classList.add('visible'), i * 80);
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.1 });
+  cards.forEach(c => observer.observe(c));
+</script>
+
+</body>
+</html>
