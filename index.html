@@ -43,6 +43,7 @@
 
   html { scroll-behavior: smooth; }
 
+  
   body {
     background: var(--bg);
     color: var(--text);
@@ -51,7 +52,7 @@
     line-height: 1.65;
     -webkit-font-smoothing: antialiased;
   }
-
+ 
   /* ── NAV ── */
   nav {
     position: sticky;
@@ -65,7 +66,7 @@
     height: 58px;
     box-shadow: 0 1px 12px rgba(0,0,0,0.18);
   }
-
+ 
   .nav-brand {
     font-family: var(--font-head);
     font-size: 1rem;
@@ -73,13 +74,13 @@
     color: #fff;
     letter-spacing: 0.01em;
   }
-
+ 
   .nav-links {
     display: flex;
     gap: 2rem;
     list-style: none;
   }
-
+ 
   .nav-links a {
     color: rgba(255,255,255,0.75);
     text-decoration: none;
@@ -88,51 +89,109 @@
     text-transform: uppercase;
     transition: color 0.2s;
   }
-
+ 
   .nav-links a:hover { color: #fff; }
-
+ 
   /* ── HERO ── */
   .hero {
     background: var(--navy);
     color: #fff;
-    padding: 88px 5% 80px;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 3rem;
-    align-items: center;
+    padding: 72px 5% 72px;
+    display: flex;
+    gap: 3.5rem;
+    align-items: flex-start;
   }
-
+ 
+  /* Left column: photo on top, interests below */
+  .hero-left {
+    display: flex;
+    flex-direction: column;
+    gap: 1.75rem;
+    flex-shrink: 0;
+    width: 220px;
+  }
+ 
+  .hero-photo {
+    width: 220px;
+    height: 220px;
+    border-radius: 10px;
+    object-fit: cover;
+    object-position: top;
+    display: block;
+    border: 2px solid rgba(255,255,255,0.12);
+  }
+ 
+  .hero-interests-block h3 {
+    font-family: var(--font-body);
+    font-size: 0.72rem;
+    font-weight: 600;
+    color: rgba(255,255,255,0.5);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: 0.6rem;
+  }
+ 
+  .hero-interests-block ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+  }
+ 
+  .hero-interests-block li {
+    font-size: 0.88rem;
+    color: rgba(255,255,255,0.75);
+    padding-left: 0.75rem;
+    position: relative;
+  }
+ 
+  .hero-interests-block li::before {
+    content: '\B7';
+    position: absolute;
+    left: 0;
+    color: var(--blue);
+  }
+ 
+  /* Right column: name, description, buttons */
+  .hero-right {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    padding-top: 0.5rem;
+  }
+ 
   .hero-label {
-    font-size: 0.75rem;
+    font-size: 0.72rem;
     letter-spacing: 0.12em;
     text-transform: uppercase;
     color: var(--blue);
-    margin-bottom: 1rem;
+    margin-bottom: 0.75rem;
     font-family: var(--font-body);
   }
-
+ 
   .hero h1 {
     font-family: var(--font-head);
-    font-size: clamp(2rem, 4vw, 3rem);
+    font-size: clamp(1.8rem, 3.5vw, 2.6rem);
     font-weight: normal;
     line-height: 1.18;
-    margin-bottom: 1.25rem;
+    margin-bottom: 1rem;
     color: #fff;
   }
-
+ 
   .hero p {
-    font-size: 1.05rem;
+    font-size: 1rem;
     color: rgba(255,255,255,0.72);
-    max-width: 480px;
-    margin-bottom: 2rem;
+    max-width: 520px;
+    margin-bottom: 1.75rem;
+    line-height: 1.65;
   }
-
+ 
   .hero-cta {
     display: flex;
     gap: 1rem;
     flex-wrap: wrap;
   }
-
+ 
   .btn {
     display: inline-block;
     padding: 0.65rem 1.5rem;
@@ -145,25 +204,21 @@
     cursor: pointer;
     border: none;
   }
-
+ 
   .btn-primary { background: var(--blue); color: #fff; }
   .btn-primary:hover { background: #1f5abf; }
   .btn-outline { background: transparent; color: #fff; border: 1.5px solid rgba(255,255,255,0.4); }
   .btn-outline:hover { border-color: #fff; background: rgba(255,255,255,0.08); }
-
-  .hero-stats {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 1.5rem;
-  }
-
+ 
+  .hero-stats { display: none; }
+ 
   .stat-card {
     background: rgba(255,255,255,0.07);
     border: 1px solid rgba(255,255,255,0.12);
     border-radius: 8px;
     padding: 1.4rem 1.5rem;
   }
-
+ 
   .stat-number {
     font-family: var(--font-head);
     font-size: 2rem;
@@ -171,16 +226,16 @@
     line-height: 1;
     margin-bottom: 0.3rem;
   }
-
+ 
   .stat-label {
     font-size: 0.8rem;
     color: rgba(255,255,255,0.55);
     letter-spacing: 0.04em;
   }
-
+ 
   /* ── SECTIONS ── */
   section { padding: 80px 5%; }
-
+ 
   .section-label {
     font-size: 0.72rem;
     letter-spacing: 0.14em;
@@ -189,7 +244,7 @@
     margin-bottom: 0.5rem;
     font-family: var(--font-body);
   }
-
+ 
   .section-title {
     font-family: var(--font-head);
     font-size: clamp(1.5rem, 3vw, 2rem);
@@ -197,37 +252,37 @@
     color: var(--navy);
     margin-bottom: 0.75rem;
   }
-
+ 
   .section-sub {
     color: var(--muted);
     font-size: 1rem;
     max-width: 580px;
     margin-bottom: 3rem;
   }
-
+ 
   /* ── ABOUT ── */
   #about { background: var(--white); border-bottom: 1px solid var(--border); }
-
+ 
   .about-grid {
     display: grid;
     grid-template-columns: 1.2fr 1fr;
     gap: 5rem;
     align-items: start;
   }
-
+ 
   .about-text p {
     color: #374151;
     margin-bottom: 1.1rem;
     font-size: 1.02rem;
   }
-
+ 
   .credential-list {
     list-style: none;
     display: flex;
     flex-direction: column;
     gap: 0.75rem;
   }
-
+ 
   .credential-list li {
     display: flex;
     align-items: flex-start;
@@ -239,23 +294,23 @@
     border-radius: 6px;
     border-left: 3px solid var(--blue);
   }
-
+ 
   .cred-icon { font-size: 1rem; flex-shrink: 0; margin-top: 0.1rem; }
-
+ 
   .cred-detail { font-size: 0.8rem; color: var(--muted); display: block; margin-top: 0.1rem; }
-
+ 
   /* ── SKILLS STRIP ── */
   .skills-strip {
     background: var(--navy);
     padding: 48px 5%;
   }
-
+ 
   .skills-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 1.5rem;
   }
-
+ 
   .skill-group h4 {
     color: rgba(255,255,255,0.5);
     font-size: 0.7rem;
@@ -265,13 +320,13 @@
     font-family: var(--font-body);
     font-weight: 600;
   }
-
+ 
   .skill-tags {
     display: flex;
     flex-wrap: wrap;
     gap: 0.4rem;
   }
-
+ 
   .skill-tag {
     background: rgba(46,111,219,0.18);
     color: #93b8f5;
@@ -281,16 +336,16 @@
     border: 1px solid rgba(46,111,219,0.3);
     font-family: var(--font-body);
   }
-
+ 
   /* ── PROJECTS ── */
   #projects { background: var(--bg); }
-
+ 
   .projects-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
     gap: 1.75rem;
   }
-
+ 
   .project-card {
     background: var(--card);
     border: 1px solid var(--border);
@@ -301,17 +356,17 @@
     transform: translateY(16px);
     transition: opacity 0.4s ease, transform 0.4s ease, box-shadow 0.25s;
   }
-
+ 
   .project-card.visible {
     opacity: 1;
     transform: translateY(0);
   }
-
+ 
   .project-card:hover {
     box-shadow: 0 6px 28px rgba(15,32,68,0.1);
     transform: translateY(-2px);
   }
-
+ 
   .project-tag {
     display: inline-block;
     font-size: 0.68rem;
@@ -325,7 +380,7 @@
     margin-bottom: 0.75rem;
     font-family: var(--font-body);
   }
-
+ 
   .project-card h3 {
     font-family: var(--font-head);
     font-size: 1.1rem;
@@ -334,14 +389,14 @@
     margin-bottom: 0.6rem;
     line-height: 1.3;
   }
-
+ 
   .project-card p {
     font-size: 0.9rem;
     color: var(--muted);
     margin-bottom: 1rem;
     line-height: 1.6;
   }
-
+ 
   .project-highlights {
     list-style: none;
     margin-bottom: 1.25rem;
@@ -349,14 +404,14 @@
     flex-direction: column;
     gap: 0.3rem;
   }
-
+ 
   .project-highlights li {
     font-size: 0.82rem;
     color: #374151;
     padding-left: 1rem;
     position: relative;
   }
-
+ 
   .project-highlights li::before {
     content: '—';
     position: absolute;
@@ -364,7 +419,7 @@
     color: var(--blue);
     font-size: 0.75rem;
   }
-
+ 
   .project-footer {
     display: flex;
     justify-content: space-between;
@@ -372,12 +427,12 @@
     padding-top: 1rem;
     border-top: 1px solid var(--border);
   }
-
+ 
   .project-year {
     font-size: 0.78rem;
     color: var(--muted);
   }
-
+ 
   .project-link {
     font-size: 0.82rem;
     font-weight: 600;
@@ -388,18 +443,18 @@
     gap: 0.3rem;
     transition: gap 0.2s;
   }
-
+ 
   .project-link:hover { gap: 0.5rem; }
-
+ 
   /* ── CV SECTION ── */
   #cv { background: var(--white); border-top: 1px solid var(--border); }
-
+ 
   .cv-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 4rem;
   }
-
+ 
   .cv-block h4 {
     font-family: var(--font-head);
     font-size: 1rem;
@@ -409,37 +464,37 @@
     padding-bottom: 0.5rem;
     border-bottom: 1px solid var(--border);
   }
-
+ 
   .cv-entry {
     display: flex;
     flex-direction: column;
     gap: 0.15rem;
     margin-bottom: 1.25rem;
   }
-
+ 
   .cv-entry-title {
     font-weight: 600;
     font-size: 0.92rem;
     color: var(--text);
   }
-
+ 
   .cv-entry-org {
     font-size: 0.85rem;
     color: var(--blue);
     font-style: italic;
   }
-
+ 
   .cv-entry-date {
     font-size: 0.78rem;
     color: var(--muted);
   }
-
+ 
   .cv-entry-detail {
     font-size: 0.82rem;
     color: #4B5563;
     margin-top: 0.2rem;
   }
-
+ 
   .cert-item {
     display: flex;
     justify-content: space-between;
@@ -448,13 +503,13 @@
     border-bottom: 1px solid var(--border);
     gap: 1rem;
   }
-
+ 
   .cert-name {
     font-size: 0.88rem;
     font-weight: 600;
     color: var(--text);
   }
-
+ 
   .cert-status {
     font-size: 0.75rem;
     font-weight: 700;
@@ -463,10 +518,10 @@
     white-space: nowrap;
     flex-shrink: 0;
   }
-
+ 
   .cert-passed { background: #D1FAE5; color: #065F46; }
   .cert-done   { background: #EEF3FB; color: #1E40AF; }
-
+ 
   .cv-download-block {
     margin-top: 2.5rem;
     padding: 1.5rem;
@@ -475,13 +530,13 @@
     border: 1px solid var(--border);
     text-align: center;
   }
-
+ 
   .cv-download-block p {
     font-size: 0.9rem;
     color: var(--muted);
     margin-bottom: 1rem;
   }
-
+ 
   /* ── CONTACT ── */
   #contact {
     background: var(--navy);
@@ -489,10 +544,10 @@
     text-align: center;
     padding: 80px 5%;
   }
-
+ 
   #contact .section-title { color: #fff; }
   #contact .section-sub   { color: rgba(255,255,255,0.6); margin: 0 auto 2.5rem; }
-
+ 
   .contact-links {
     display: flex;
     justify-content: center;
@@ -500,7 +555,7 @@
     flex-wrap: wrap;
     margin-bottom: 3rem;
   }
-
+ 
   .contact-link {
     display: flex;
     align-items: center;
@@ -514,18 +569,18 @@
     font-weight: 500;
     transition: all 0.2s;
   }
-
+ 
   .contact-link:hover {
     border-color: #fff;
     color: #fff;
     background: rgba(255,255,255,0.08);
   }
-
+ 
   .contact-note {
     font-size: 0.82rem;
     color: rgba(255,255,255,0.35);
   }
-
+ 
   /* ── FOOTER ── */
   footer {
     background: #080F1E;
@@ -534,25 +589,26 @@
     padding: 1.25rem 5%;
     font-size: 0.78rem;
   }
-
+ 
   /* ── RESPONSIVE ── */
   @media (max-width: 768px) {
-    .hero { grid-template-columns: 1fr; padding: 56px 5% 56px; }
-    .hero-stats { display: none; }
+    .hero { flex-direction: column; padding: 48px 5% 48px; gap: 2rem; }
+    .hero-left { width: 100%; flex-direction: row; flex-wrap: wrap; align-items: flex-start; gap: 1.5rem; }
+    .hero-photo { width: 120px; height: 120px; }
+    .hero-interests-block { flex: 1; }
     .about-grid { grid-template-columns: 1fr; gap: 2.5rem; }
     .cv-grid { grid-template-columns: 1fr; gap: 2.5rem; }
     .nav-links { display: none; }
     .projects-grid { grid-template-columns: 1fr; }
   }
-
+ 
   @media (prefers-reduced-motion: reduce) {
     .project-card { opacity: 1; transform: none; transition: none; }
   }
 </style>
-<noscript><style>.project-card{opacity:1!important;transform:none!important;}</style></noscript>
 </head>
 <body>
-
+ 
 <!-- NAV -->
 <nav>
   <span class="nav-brand">Amos Tochukwu Ezeh</span>
@@ -563,8 +619,41 @@
     <li><a href="#contact">Contact</a></li>
   </ul>
 </nav>
-
+ 
 <!-- HERO -->
+<header class="hero">
+ 
+  <!-- Left column: photo, then interests below -->
+  <div class="hero-left">
+    <img src="Corporate Photo.jpeg" alt="Amos Tochukwu Ezeh" class="hero-photo">
+    <div class="hero-interests-block">
+      <h3>Interests</h3>
+      <ul>
+        <li>Financial Risk Management</li>
+        <li>Quantitative Analysis</li>
+        <li>Portfolio &amp; Asset Management</li>
+        <li>Market &amp; Credit Risk Analysis</li>
+        <li>Machine Learning in Finance</li>
+        <li>Financial Modeling &amp; Valuation</li>
+      </ul>
+    </div>
+  </div>
+ 
+  <!-- Right column: name, description, buttons -->
+  <div class="hero-right">
+    <p class="hero-label">Quantitative Risk &amp; Financial Analytics</p>
+    <h1>Amos Tochukwu Ezeh</h1>
+    <p>MSc Mathematics (Probability &amp; Finance) · FRM Part I (GARP, May 2026) · Building quantitative risk models, machine learning pipelines, and financial analytics tools in Python. Based in L'Aquila, Italy. Open to roles across Europe.</p>
+    <div class="hero-cta">
+      <a href="#projects" class="btn btn-primary">View Projects</a>
+      <a href="#contact" class="btn btn-outline">Get in Touch</a>
+    </div>
+  </div>
+ 
+</header>
+ 
+
+<!-- HERO
 <header class="hero">
   <div class="hero-left">
     <p class="hero-label">Quantitative &amp; Financial Analytics</p>
@@ -577,6 +666,8 @@
   </div>
 
   <div class="hero-interests">
+    <div class="hero-image">
+    <img src="Corporate Photo.jpeg" alt="Amos Tochukwu Ezeh - Quantitative Analyst">
     <h3>Interests</h3>
     <ul>
       <li>Financial Risk Management</li>
@@ -586,7 +677,9 @@
       <li>Machine Learning in Finance</li>
       <li>Financial Modeling &amp; Valuation</li>
     </ul>
-  </div>
+      </div> 
+    
+  </div> -->
 
   <!-- <div class="hero-stats">
     <div class="stat-card">
@@ -772,7 +865,7 @@
 
     <div class="project-card">
       <span class="project-tag">Credit Risk</span>
-      <h3>Credit Risk PD Model — Deployment-Grade</h3>
+      <h3>Credit Risk PD Model </h3>
       <p>A dual-track PD modelling pipeline combining a regulatory-standard WoE scorecard and a calibrated XGBoost challenger, with full governance infrastructure.</p>
       <ul class="project-highlights">
         <li>Monotonic WoE scorecard with IV-based feature selection and VIF collinearity pruning</li>
@@ -782,7 +875,7 @@
       </ul>
       <div class="project-footer">
         <span class="project-year">2026</span>
-        <a href="https://github.com/AmoscoTk" target="_blank" class="project-link">GitHub ↗</a>
+        <a href="https://github.com/AmoscoTk/Credit-Risk-Model" target="_blank" class="project-link">GitHub ↗</a>
       </div>
     </div>
 
@@ -798,13 +891,13 @@
       </ul>
       <div class="project-footer">
         <span class="project-year">2026</span>
-        <a href="https://github.com/AmoscoTk" target="_blank" class="project-link">GitHub ↗</a>
+        <a href="https://github.com/AmoscoTk/Transactional_Fraud_Detection_Model" target="_blank" class="project-link">GitHub ↗</a>
       </div>
     </div>
 
     <div class="project-card">
       <span class="project-tag">Trading Strategy</span>
-      <h3>Multi-Model Trading Strategy with SHAP Explainability</h3>
+      <h3>Multiple ML Trading Models with SHAP Explainability</h3>
       <p>Systematic comparison of five classification models for next-day equity direction prediction, with a full SHAP explainability layer.</p>
       <ul class="project-highlights">
         <li>Logistic Regression, Random Forest, XGBoost, LightGBM, CatBoost compared on matched data</li>
@@ -814,7 +907,7 @@
       </ul>
       <div class="project-footer">
         <span class="project-year">2026</span>
-        <a href="https://github.com/AmoscoTk" target="_blank" class="project-link">GitHub ↗</a>
+        <a href="https://github.com/AmoscoTk/Analysis_of_Multiple_ML_Trading-Models" target="_blank" class="project-link">GitHub ↗</a>
       </div>
     </div>
 
@@ -830,7 +923,7 @@
       </ul>
       <div class="project-footer">
         <span class="project-year">2026</span>
-        <a href="https://github.com/AmoscoTk" target="_blank" class="project-link">GitHub ↗</a>
+        <a href="https://github.com/AmoscoTk/Hybrid-portfolio-risk-engine" target="_blank" class="project-link">GitHub ↗</a>
       </div>
     </div>
 
@@ -852,7 +945,7 @@
 
     <div class="project-card">
       <span class="project-tag">NLP / Sentiment</span>
-      <h3>Financial News Sentiment Dashboard</h3>
+      <h3>Financial News Sentiment Model</h3>
       <p>A two-part NLP pipeline for financial news monitoring and signal validation, using FinBERT with a finance-lexicon fallback.</p>
       <ul class="project-highlights">
         <li>Point-in-time news alignment: post-16:00 ET headlines map to next business day</li>
@@ -862,7 +955,7 @@
       </ul>
       <div class="project-footer">
         <span class="project-year">2026</span>
-        <a href="https://github.com/AmoscoTk" target="_blank" class="project-link">GitHub ↗</a>
+        <a href="https://github.com/AmoscoTk/Financial-News-Sentiment-Analysis" target="_blank" class="project-link">GitHub ↗</a>
       </div>
     </div>
 
@@ -893,10 +986,9 @@
       </ul>
       <div class="project-footer">
         <span class="project-year">2026</span>
-        <a href="https://github.com/AmoscoTk" target="_blank" class="project-link">GitHub ↗</a>
+        <a href="https://github.com/AmoscoTk/Monte-Carlo_Loss_Distribution_Simulator" target="_blank" class="project-link">GitHub ↗</a>
       </div>
     </div>
-
   </div>
 </section>
 
@@ -1013,7 +1105,7 @@
 
 <!-- FOOTER -->
 <footer>
-  <p>© 2026 Amos Tochukwu Ezeh · Built with purpose</p>
+  <p>© 2026 Amos Tochukwu Ezeh · Teekay</p>
 </footer>
 
 <script>
